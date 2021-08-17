@@ -9,7 +9,7 @@ export class DepositController {
     const token = await this.token.getToken();
     return {
       status: 'success',
-      redirect: 'https://<PAYSYSTEM>/checkout?token=' + token,
+      redirect: 'https://cashforo.com/checkout?token=' + token,
     };
   }
 }
