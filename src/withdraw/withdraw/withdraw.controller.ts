@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Get, Render } from '@nestjs/common';
 
 @Controller('withdraw')
 export class WithdrawController {
@@ -7,5 +7,11 @@ export class WithdrawController {
     return {
       status: 'success',
     };
+  }
+
+  @Get('test')
+  @Render('choose-result')
+  test() {
+    return { type: 'Withdraw' };
   }
 }
