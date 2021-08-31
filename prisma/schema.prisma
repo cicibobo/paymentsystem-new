@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Log {
+  id                  Int      @id @default(autoincrement())
+  paymentType         String   @db.VarChar(20)
+  systemStatus        String   @db.VarChar(100)
+  paymentSystemName   String   @db.VarChar(250)
+  paymentSystemStatus String   @db.VarChar(100)
+  transactionId       String
+  dateTime            DateTime
+  env                 String   @db.VarChar(10)
+  metadata            Json?
+  amount              Decimal? @db.Decimal(65, 6)
+  userId              Int?
+  currency            String?  @db.VarChar(10)
+  merchantId          Int?
+}
