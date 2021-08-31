@@ -32,6 +32,3 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-# Keep environment variables out of version control
-.env
